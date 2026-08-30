@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Practical 6</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-indigo-500 via-blue-300 to-purple-300">
+    <div>
+    <h1><Marks Calculator></h1>
+    <table>
+        <tr>
+        
+            <th><b>#</th>
+            <th><b>SUBJECT</th>
+            <th><b>MARKS</th>
+        </tr>
+    
+        <tr>
+            <td>1</td>
+            <td>DSA</td>
+            <td><input type="number" id="s1" placeholder="Enter Marks"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>CAO</td>
+            <td><input type="number" id="s2" placeholder="Enter Marks"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>DMGT</td>
+            <td><input type="number" id="s3" placeholder="Enter Marks"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>ES</td>
+            <td><input type="number" id="s4" placeholder="Enter Marks"></td>
+                
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <button class="bg-yellow-700 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded" onclick="calc()">CALCULATE</button>
+            </td>
+        </tr>
+    </table>
+    
+    <h1>TOTAL MARKS</h1>
+    <h1 id="totalMarks"></h1>
+    <br><br><br>
+    <h1>PERCENTAGE</h1>
+    <h1 id="per"></h1>
+<br><br><br>
+<h1>GRADE</h1>
+<h1 id="grade"></h1>
+<script>
+    function calc()  {
+
+        let sub1 = Number(document.getElementById("s1").value);
+        let sub2 = Number(document.getElementById("s2").value);
+        let sub3 = Number(document.getElementById("s3").value);
+        let GRADE = null;
+        let total = sub1 + sub2 + sub3;
+        let per = (total/300)*100;
+        if(per >= 75) {
+            GRADE = "A";
+        }
+        else if(per >= 65 && per <=74) {
+            GRADE = "B";
+        }
+        
+        document.getElementById("per").innerHTML = per;
+        document.getElementById("totalMarks").innerHTML = total;
+        document.getElementById("grade").innerHTML = GRADE;
+    }
+   
+</script>
+</div>
+  </body>
+</html>
